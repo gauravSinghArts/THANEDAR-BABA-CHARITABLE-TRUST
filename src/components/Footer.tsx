@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/src/assets/logo.png" alt="Logo" className="h-16 w-16 object-contain" />
+              <img src={logo} alt="Logo" className="h-16 w-16 object-contain" />
             </div>
             <p className="text-background/80 mb-4">
               जानवरों और ज़रूरतमंद लोगों की सेवा में समर्पित एक पंजीकृत NGO।
