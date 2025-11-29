@@ -11,7 +11,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16">
+    <section id="home" className="relative min-h-screen max-[600px]:min-h-[80vh] flex items-center pt-16">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
