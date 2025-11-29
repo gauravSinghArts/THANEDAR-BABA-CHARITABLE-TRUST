@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Heart } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navigation = () => {
             onClick={() => scrollToSection("home")}
             className="flex items-center gap-2 font-bold text-xl text-primary hover:opacity-80 transition-smooth"
           >
-            <img src="/src/assets/logo.png" alt="Logo" className="h-auto w-[80px] object-contain" />
+            <img src={logo} alt="Logo" className="h-auto w-[80px] object-contain" />
           </button>
 
           {/* Desktop Navigation */}
