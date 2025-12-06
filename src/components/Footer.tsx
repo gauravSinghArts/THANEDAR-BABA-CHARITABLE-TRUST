@@ -1,4 +1,4 @@
-import { Heart } from "lucide-react";
+import { Heart, Facebook, Instagram, Youtube } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -17,9 +17,36 @@ const Footer = () => {
               जानवरों और ज़रूरतमंद लोगों की सेवा में समर्पित एक पंजीकृत NGO।
               हम हर दिन सैकड़ों जीवन को छू रहे हैं।
             </p>
-            <p className="text-sm text-background/70">
+            <p className="text-sm text-background/70 mb-6">
               पंजीकरण संख्या: NGO/2023/IND/12345
             </p>
+
+            <div className="flex gap-4">
+              <a
+                href="https://www.facebook.com/thaanedaarbabacharitabletrust"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-background/10 p-2 rounded-full hover:bg-primary hover:text-white transition-smooth"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/thaanedaarbabacharitabletrust?igsh=eWQzcDUyZnlzM202"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-background/10 p-2 rounded-full hover:bg-primary hover:text-white transition-smooth"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.youtube.com/@thaanedaarbabacharitabletrust"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-background/10 p-2 rounded-full hover:bg-primary hover:text-white transition-smooth"
+              >
+                <Youtube className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}

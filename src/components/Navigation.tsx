@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X, Heart, Facebook, Instagram, Youtube } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Navigation = () => {
@@ -11,7 +11,7 @@ const Navigation = () => {
     { label: "हमारे बारे में", id: "about" },
     { label: "हमारे कार्य", id: "causes" },
     { label: "दान करें", id: "donate" },
-    { label: "खरीदें", id: "shop" },
+    // { label: "खरीदें", id: "shop" },
     { label: "संपर्क करें", id: "contact" },
   ];
 
@@ -90,6 +90,33 @@ const Navigation = () => {
             >
               अभी दान करें
             </Button>
+
+            <div className="flex justify-center gap-4 pt-4 border-t border-border/50">
+              <a
+                href="https://www.facebook.com/thaanedaarbabacharitabletrust"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary transition-smooth"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/thaanedaarbabacharitabletrust?igsh=eWQzcDUyZnlzM202"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary transition-smooth"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.youtube.com/@thaanedaarbabacharitabletrust"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary transition-smooth"
+              >
+                <Youtube className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         )}
       </div>

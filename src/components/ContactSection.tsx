@@ -190,24 +190,24 @@ const ContactSection = () => {
               हमसे जुड़ें
             </h3>
             <div className="flex gap-4">
-              {/* <a
-                  href="#"
-                  className="w-12 h-12 gradient-hero rounded-full flex items-center justify-center hover:shadow-warm transition-smooth"
-                >
-                  <Facebook className="h-6 w-6 text-white" />
-                </a> */}
+              <a target="_blank"
+                href="https://www.facebook.com/thaanedaarbabacharitabletrust"
+                className="w-12 h-12 gradient-hero rounded-full flex items-center justify-center hover:shadow-warm transition-smooth"
+              >
+                <Facebook className="h-6 w-6 text-white" />
+              </a>
               <a target="_blank"
                 href="https://www.instagram.com/thaanedaarbabacharitabletrust?igsh=eWQzcDUyZnlzM202"
                 className="w-12 h-12 gradient-hero rounded-full flex items-center justify-center hover:shadow-warm transition-smooth"
               >
                 <Instagram className="h-6 w-6 text-white" />
               </a>
-              {/* <a
-                  href="#"
-                  className="w-12 h-12 gradient-hero rounded-full flex items-center justify-center hover:shadow-warm transition-smooth"
-                >
-                  <Youtube className="h-6 w-6 text-white" />
-                </a> */}
+              <a target="_blank"
+                href="https://www.youtube.com/@thaanedaarbabacharitabletrust"
+                className="w-12 h-12 gradient-hero rounded-full flex items-center justify-center hover:shadow-warm transition-smooth"
+              >
+                <Youtube className="h-6 w-6 text-white" />
+              </a>
               <a
                 href="https://wa.me/918290977760"
                 target="_blank"
