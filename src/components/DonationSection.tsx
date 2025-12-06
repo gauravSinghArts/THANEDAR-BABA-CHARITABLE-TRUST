@@ -21,29 +21,31 @@ const DonationSection = () => {
   const UPI_ID = "merchant524373.augp@aubank";
 
   // Generate UPI payment link
-  const generateUPILink = (amt: string, type: string) => {
-    const finalAmount = amt || "0";
+  const generateUPILink = (amt: string, type: string, useShortNote: boolean = false) => {
+    const finalAmount = parseFloat(amt || "0").toFixed(2);
     let note = "";
 
     switch (type) {
       case "animals":
-        note = "Donation for Animals - THANEDAR BABA CHARITABLE TRUST";
+        note = useShortNote ? "Donation for Animals" : "Donation for Animals - THANEDAR BABA CHARITABLE TRUST";
         break;
       case "people":
-        note = "Donation for People - THANEDAR BABA CHARITABLE TRUST";
+        note = useShortNote ? "Donation for People" : "Donation for People - THANEDAR BABA CHARITABLE TRUST";
         break;
       default:
-        note = "General Donation - THANEDAR BABA CHARITABLE TRUST";
+        note = useShortNote ? "General Donation" : "General Donation - THANEDAR BABA CHARITABLE TRUST";
     }
 
-    return `upi://pay?pa=${UPI_ID}&pn=THANEDAR BABA CHARITABLE TRUST&am=${finalAmount}&cu=INR&tn=${encodeURIComponent(note)}`;
+    const payeeName = "THANEDAR BABA CHARITABLE TRUST";
+    return `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(payeeName)}&am=${finalAmount}&cu=INR&tn=${encodeURIComponent(note)}`;
   };
 
   // Generate QR code when amount or type changes
   useEffect(() => {
     const finalAmount = customAmount || amount;
     if (finalAmount && parseFloat(finalAmount) > 0) {
-      const upiLink = generateUPILink(finalAmount, donationType);
+      // Use long note for QR code
+      const upiLink = generateUPILink(finalAmount, donationType, false);
 
       QRCode.toDataURL(upiLink, {
         width: 300,
@@ -231,7 +233,7 @@ const DonationSection = () => {
                   QR कोड स्कैन करें
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  किसी भी UPI ऐप से स्कैन करें और ₹{customAmount || amount} का भुगतान करें
+                  किसी भी UPI ऐप से स्कैन करें और ₹{customAmount || amount} का दान करें
                 </p>
 
                 <div className="bg-white p-6 rounded-xl inline-block mb-6 shadow-lg">
@@ -246,7 +248,8 @@ const DonationSection = () => {
                   <Button
                     onClick={() => {
                       const finalAmount = customAmount || amount;
-                      const link = generateUPILink(finalAmount, donationType);
+                      // Use short note for UPI App button
+                      const link = generateUPILink(finalAmount, donationType, true);
                       window.location.href = link;
                     }}
                     className="w-full gradient-hero shadow-warm text-lg font-semibold py-6"
